@@ -2,19 +2,29 @@ DROP DATABASE IF EXISTS SqlBootcampExample;
 CREATE DATABASE SqlBootcampExample;
 use SqlBootcampExample;
 
+CREATE TABLE State (
+	StateCode nvarchar(2) not null primary key,
+    Name nvarchar(50) not null
+);
+
 CREATE TABLE Customer (
 	ID int not null primary key auto_increment,
 	Name nvarchar(50) not null,
 	City nvarchar(50) not null,
 	State nvarchar(2) not null,
 	Sales decimal(18,2) not null,
-	Active bit not null
+	Active bit not null,
+    foreign key (State) references State(StateCode)
 );
 
-CREATE TABLE State (
-	State nvarchar(2) not null primary key,
-    Name nvarchar(50) not null
-);
+Insert State (StateCode, Name) Values ('AL', 'Alabama');
+Insert State (StateCode, Name) Values ('CA', 'California');
+Insert State (StateCode, Name) Values ('HI', 'Hawaii');
+Insert State (StateCode, Name) Values ('NJ', 'New Jersey');
+Insert State (StateCode, Name) Values ('NV', 'Nevada');
+Insert State (StateCode, Name) Values ('OH', 'Ohio');
+Insert State (StateCode, Name) Values ('TX', 'Texas');
+Insert State (StateCode, Name) Values ('WA', 'Washington');
 
 Insert Customer (Name, City, State, Sales, Active) Values ('Acme, inc.','Jersey City','NJ',14381891,1);
 Insert Customer (Name, City, State, Sales, Active) Values ('Widget Corp','Seattle','WA',97865829,1);
@@ -32,12 +42,9 @@ Insert into Customer (Name, City, State, Sales, Active)
     ('Super Cool Computers','Cincinnati','OH','12345678.90',1),
     ('Target','Cincinnati','OH','55555555.55', 1);
 
+-- inner join
 
-Insert State (State, Name) Values ('AL', 'Alabama');
-Insert State (State, Name) Values ('CA', 'California');
-Insert State (State, Name) Values ('HI', 'Hawaii');
-Insert State (State, Name) Values ('NJ', 'New Jersey');
-Insert State (State, Name) Values ('NV', 'Nevada');
-Insert State (State, Name) Values ('OH', 'Ohio');
-Insert State (State, Name) Values ('TX', 'Texas');
-Insert State (State, Name) Values ('WA', 'Washington');
+Select c.Name, c.City, s.Name as 'State'
+	From Customer c
+    JOIN State s
+    on s.StateCode = c.State;

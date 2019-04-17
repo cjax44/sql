@@ -11,6 +11,11 @@ CREATE TABLE Customer (
 	Active bit not null
 );
 
+CREATE TABLE State (
+	State nvarchar(2) not null primary key,
+    Name nvarchar(50) not null
+);
+
 Insert Customer (Name, City, State, Sales, Active) Values ('Acme, inc.','Jersey City','NJ',14381891,1);
 Insert Customer (Name, City, State, Sales, Active) Values ('Widget Corp','Seattle','WA',97865829,1);
 Insert Customer (Name, City, State, Sales, Active) Values ('123 Warehousing','Los Angeles','CA',77503710,1);
@@ -26,5 +31,13 @@ Insert into Customer (Name, City, State, Sales, Active)
 	Values 
     ('Super Cool Computers','Cincinnati','OH','12345678.90',1),
     ('Target','Cincinnati','OH','55555555.55', 1);
-    
-    
+
+
+Insert State (State, Name) Values ('AL', 'Alabama');
+Insert State (State, Name) Values ('CA', 'California');
+Insert State (State, Name) Values ('HI', 'Hawaii');
+Insert State (State, Name) Values ('NJ', 'New Jersey');
+Insert State (State, Name) Values ('NV', 'Nevada');
+Insert State (State, Name) Values ('OH', 'Ohio');
+Insert State (State, Name) Values ('TX', 'Texas');
+Insert State (State, Name) Values ('WA', 'Washington');

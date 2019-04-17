@@ -43,8 +43,3 @@ Insert into Customer (Name, City, State, Sales, Active)
     ('Target','Cincinnati','OH','55555555.55', 1);
 
 -- inner join
-
-Select c.Name, c.City, s.Name as 'State'
-	From Customer c
-    JOIN State s
-    on s.StateCode = c.State;

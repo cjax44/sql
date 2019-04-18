@@ -66,6 +66,8 @@ Insert into Instructor Values
     (3, 3, 'Ariana', 'Large'),
     (4, 4, 'Rick', 'Rolled');
     
+/* TRANSACTIONAL (PUTTING ENROLLMENT TEST INFO IN)
+
 Insert into Enrollment Values
 	(1, 1, 1, 100.00),
     (2, 2, 3, 95.00),
@@ -80,9 +82,9 @@ Insert into Enrollment Values
     (11, 5, 2, 80.00),
     (12, 5, 6, 19.00),
     (13, 5, 4, 68.75);
-    
+    */
 
 -- create and grant user
 
-CREATE USER sdb_user@localhost IDENTIFIED BY 'sesame';
+CREATE USER IF NOT EXISTS sdb_user@localhost IDENTIFIED BY 'sesame';
 GRANT SELECT, INSERT, DELETE, UPDATE ON sdb.* TO sdb_user@localhost;

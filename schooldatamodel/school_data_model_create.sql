@@ -66,23 +66,6 @@ Insert into Instructor Values
     (3, 3, 'Ariana', 'Large'),
     (4, 4, 'Rick', 'Rolled');
     
-/* TRANSACTIONAL (PUTTING ENROLLMENT TEST INFO IN)
-
-Insert into Enrollment Values
-	(1, 1, 1, 100.00),
-    (2, 2, 3, 95.00),
-    (3, 3, 1, 50.00),
-    (4, 3, 2, 55.00),
-    (5, 3, 3, 57.00),
-    (6, 1, 2, 99.99),
-    (7, 1, 3, 99.91),
-    (8, 4, 1, 70.02),
-    (9, 4, 4, 84.25),
-    (10, 4, 5, 92.20),
-    (11, 5, 2, 80.00),
-    (12, 5, 6, 19.00),
-    (13, 5, 4, 68.75);
-    */
 
 -- create and grant user
 

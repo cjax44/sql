@@ -117,6 +117,24 @@ INSERT INTO product (`ID`,`VendorID`,`PartNumber`,`Name`,`Price`,`Unit`,`PhotoPa
 INSERT INTO product (`ID`,`VendorID`,`PartNumber`,`Name`,`Price`,`Unit`,`PhotoPath`) VALUES (12,5,'228148','Acer Aspire ATC-780A-UR12 Desktop Computer',399.99,'','/images/AcerAspireDesktop.jpg');
 INSERT INTO product (`ID`,`VendorID`,`PartNumber`,`Name`,`Price`,`Unit`,`PhotoPath`) VALUES (13,5,'279364','Lenovo IdeaCentre All-In-One Desktop',349.99,'','/images/LenovoIdeaCenter.jpg');
 
+-- Constraints
+
+ALTER TABLE User 
+    ADD CONSTRAINT uname
+    UNIQUE KEY(username);
+    
+ ALTER TABLE purchaserequestlineitem 
+    ADD CONSTRAINT req_pdt
+    UNIQUE KEY(PurchaseRequestID, productID);
+  
+ ALTER TABLE product 
+    ADD CONSTRAINT vendor_part
+    UNIQUE KEY(VendorID, PartNumber);
+    
+ ALTER TABLE vendor 
+    ADD CONSTRAINT vcode
+    UNIQUE KEY(Code);
+    
 -- Create user if nonexistant
 
 CREATE USER IF NOT EXISTS prs_user@localhost IDENTIFIED BY 'sesame';

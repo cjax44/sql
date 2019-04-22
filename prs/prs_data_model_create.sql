@@ -89,7 +89,8 @@ CREATE TABLE PurchaseRequestLineItem (
 
 INSERT INTO user (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin) VALUES 
 (1,'SYSTEM','xxxxx','System','System','XXX-XXX-XXXX','system@test.com',1,1),
-(2,'sblessing','login','Sean','Blessing','513-600-7096','sean@blessingtechnology.com',1,1);
+(2,'sblessing','login','Sean','Blessing','513-600-7096','sean@blessingtechnology.com',1,1),
+(3, 'cjackson', 'login','Chris','Jackson','513-207-4329','cjax44@gmail.com',1,1);
 
 -- insert vendors
 
